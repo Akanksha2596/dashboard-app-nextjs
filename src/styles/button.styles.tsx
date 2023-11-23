@@ -1,26 +1,29 @@
 import styled from "styled-components";
 import DatePicker from "react-datepicker";
+
 export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
+  width: 1208px;
+  height: 39px;
   justify-content: flex-end;
-  margin: 5px;
-  border: 1px solid black;
-  max-width: 100%;
+  padding-left: 32px;
+  gap: 5px;
 `;
 
 export const Button = styled.button`
   display: flex;
-  margin-right: 5px;
+  margin-right: 10px;
   align-items: center;
   align-self: center;
-  width: 91px;
+  width: 89px;
   height: 39px;
-  padding: 10px;
+  padding: 0px 14px;
   border-radius: 20px;
   border: 1px solid #dddddd;
   color: #9d9d9d;
   gap: 5px;
+  background-color: white;
 
   &:hover {
     opacity: 0.8;
@@ -29,17 +32,29 @@ export const Button = styled.button`
 `;
 
 export const DateInput = styled(DatePicker)`
-  // margin-right: 10px;
-  // padding: 5px;
   display: flex;
-  margin-right: 5px;
   align-items: center;
   align-self: center;
-  width: 91px;
+  width: 146px;
   height: 39px;
-  padding: 10px;
+  padding: 0px 10px;
   border-radius: 20px;
-  border: 1px solid #dddddd;
-  color: #9d9d9d;
+  border: 1px solid rgba(58, 58, 58, 1);
   gap: 5px;
+  font-family: Strawford;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(58, 58, 58, 1);
+`;
+
+export const ButtonText = styled.text`
+  font-family: Strawford;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
 `;

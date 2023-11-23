@@ -1,5 +1,9 @@
 import React from "react";
 import ButtonFilter from "./ButtonFilter";
+import Card from "./Card";
+import Graph from "./Graph";
+import StoreItem from "./StoreItem";
+import PostItem from "./PostItem";
 // import {
 //   Chart as ChartJS,
 //   CategoryScale,
@@ -56,10 +60,11 @@ import ButtonFilter from "./ButtonFilter";
 // };
 const MainContainer = () => {
   return (
-    <div>
+    <>
       <ButtonFilter />
-      {/* <Line options={options} data={data} />; */}
-    </div>
+      <Graph />
+      <Card />
+    </>
   );
 };
 
