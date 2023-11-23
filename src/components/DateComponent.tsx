@@ -29,7 +29,7 @@ const getThisWeekDateRange = (): [Date, Date] => {
   );
   const endOfWeek = new Date(startOfWeek);
   endOfWeek.setDate(startOfWeek.getDate() + 6);
-
+  console.log(startOfWeek, "ss", endOfWeek, "startOfWeek, endOfWeek");
   return [startOfWeek, endOfWeek];
 };
 
@@ -48,7 +48,6 @@ const DateComponent: React.FC = () => {
     newDate.setMonth(newDate.getMonth() - 1);
     setCurrentDate(newDate);
     setInputValue(formatDateRange(newDate, newDate));
-    console.log(newDate);
   };
 
   // Function to handle "Last Week" button click
@@ -57,7 +56,6 @@ const DateComponent: React.FC = () => {
     newDate.setDate(newDate.getDate() - 7);
     setCurrentDate(newDate);
     setInputValue(formatDateRange(newDate, newDate));
-    console.log(newDate);
   };
 
   // Function to handle "Yesterday" button click
@@ -66,27 +64,26 @@ const DateComponent: React.FC = () => {
     newDate.setDate(newDate.getDate() - 1);
     setCurrentDate(newDate);
     setInputValue(formatDateRange(newDate, newDate));
-    // console.log(newDate);
+    //
   };
-  console.log(currentDate, "ccc");
 
   // Function to handle "This week" button click
   const handleThisWeek = () => {
     const [startOfWeek, endOfWeek] = getThisWeekDateRange();
     setCurrentDate(startOfWeek);
     setInputValue(formatDateRange(startOfWeek, endOfWeek));
-    console.log(startOfWeek);
   };
 
   return (
     <>
-      <SingleButton onClick={handleLastMonth} text="Last Month" />
-      <SingleButton onClick={handleLastWeek} text="Last Week" />
-      <SingleButton onClick={handleYesterday} text="Yesterday" />
-      <SingleButton onClick={handleThisWeek} text="This Week" />
+      <SingleButton onClick={handleLastMonth} ButtonText="Lastmonth" />
+      <SingleButton onClick={handleLastWeek} ButtonText="Lastweek" />
+      <SingleButton onClick={handleYesterday} ButtonText="Yesterday" />
+      <SingleButton onClick={handleThisWeek} ButtonText="Thisweek" />
       <DateInput
         onChange={(date) => console.log(date)}
         selected={currentDate}
+        dateFormat="d MMM"
       />
     </>
   );
