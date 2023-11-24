@@ -24,7 +24,7 @@ export const ProductImage = styled.img`
 export const ContentDiv = styled.div`
   display: flex;
   flex-direction: column;
-  align-iutems: space-between;
+  align-items: space-between;
   width: 217px;
   height: 41.17px;
   gap: 4px;
@@ -56,4 +56,17 @@ export const SubHeading = styled.span`
   letter-spacing: 0em;
   text-align: left;
   color: black;
+`;
+
+export const ItemWrapper = styled.div`
+  width: 390px;
+  height: 440px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 349px;
+
+  &::-webkit-scrollbar {
+    width: 1px;
+    background: #f1f1f1;
+  }
 `;
