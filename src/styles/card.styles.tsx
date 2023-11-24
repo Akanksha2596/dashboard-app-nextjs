@@ -1,20 +1,23 @@
 import styled from "styled-components";
 
-export const CardContainer = styled.div`
-  display: flex;
-  width: 1208px;
-  height: 440px;
-  gap: 19px;
-  // border: 1px solid pink;
-  margin-top: 10px;
-`;
+type ColumnProps = {
+  size?: number;
+  sizeSm?: number;
+  sizeMd?: number;
+  sizeLg?: number;
+  sizeXl?: number;
+  flex?: string;
+  flexDirection?: string;
+  marginTop?: number;
+  marginLeft?: number;
+};
 
 export const HeadingContainer = styled.div`
   display: flex;
   justify-content: space-around;
   width: 390px;
   padding: 0px, 32px, 0px, 32px;
-  justify: space-between;
+  justify-content: space-between;
   border-bottom: 0.8px solid rgba(221, 221, 221, 1);
   padding: 30px;
 `;
@@ -39,4 +42,63 @@ export const ArrowIcon = styled.img`
 export const Wrapper = styled.div`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin-top: 10px;
+`;
+
+export const Columns = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0 5% 0;
+  }
+
+  @media (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0 5% 0;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0 5% 0;
+  }
+
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0 5% 0;
+  }
+`;
+
+export const Column = styled.div<ColumnProps>`
+  flex: ${({ size }) => size};
+  flex-direction: ${({ flexDirection }) => flexDirection};
+  margin-top: ${({ marginTop }) => marginTop + `px`};
+  margin-left: ${({ marginLeft }) => marginLeft + `px`};
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  height: 50vh;
+
+  @media (max-width: 576px) {
+    flex: ${({ sizeSm }) => sizeSm};
+    border-radius: 0px;
+  }
+
+  @media (max-width: 768px) {
+    flex: ${({ sizeMd }) => sizeMd};
+    border-radius: 0px;
+  }
+
+  @media (max-width: 992px) {
+    flex: ${({ sizeLg }) => sizeLg};
+    border-radius: 0px;
+  }
+
+  @media (max-width: 1200px) {
+    flex: ${({ sizeXl }) => sizeXl};
+    border-radius: 0px;
+  }
 `;

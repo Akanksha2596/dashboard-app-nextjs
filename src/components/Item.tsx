@@ -30,7 +30,7 @@ type MyComponentProps = {
 export const Item = (props: MyComponentProps) => {
   return (
     <>
-      <Wrapper className="test">
+      {/* <Wrapper> */}
         <HeadingContainer>
           <h3>{props.HeadingText}</h3>
           <span>
@@ -71,7 +71,7 @@ export const Item = (props: MyComponentProps) => {
             );
           })}
         </ItemWrapper>
-      </Wrapper>
+      {/* </Wrapper> */}
     </>
   );
 };

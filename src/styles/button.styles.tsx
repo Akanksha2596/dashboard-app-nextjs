@@ -4,11 +4,23 @@ import DatePicker from "react-datepicker";
 export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 1208px;
-  height: 39px;
   justify-content: flex-end;
   padding-left: 32px;
   gap: 5px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  @media (max-width: 992px) {
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 576px) {
+    justify-content: flex-start;
+  }
 `;
 
 export const Button = styled.button`
@@ -22,10 +34,12 @@ export const Button = styled.button`
   border-radius: 20px;
   border: 1px solid #dddddd;
   color: #9d9d9d;
-  gap: 5px;
   background-color: white;
+  white-space: nowrap;
 
   &:hover {
+    border: 1px solid black;
+    color: black;
     opacity: 0.8;
     transform: scale(0.98);
   }
@@ -57,4 +71,9 @@ export const ButtonText = styled.text`
   line-height: 17px;
   letter-spacing: 0em;
   text-align: left;
+`;
+
+export const RootWrapper = styled.div`
+  margin: 50px;
+  // outline: solid 1px black;
 `;
