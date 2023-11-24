@@ -1,29 +1,16 @@
 import styled from "styled-components";
 import React from "react";
-import { SingleContainer, HeadingContainer } from "@/styles/card.styles";
 import { Item } from "./Item";
+import topProductData from "../../TopProductsData.json";
+import topPostsData from "../../TopPostsData.json";
+import topStoresData from "../../TopStoresData.json";
 
-type CardProps = {
-  HeadingText: string;
-  ArrowIcon: string;
-};
-
-const ProductSingleCard: React.FC<CardProps> = ({ HeadingText, ArrowIcon }) => {
+const ProductSingleCard = () => {
   return (
     <>
-      <SingleContainer>
-        <HeadingContainer>
-          <h3>{HeadingText}</h3>
-          <img src={ArrowIcon} />
-        </HeadingContainer>
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-      </SingleContainer>
+      <Item topProductData={topProductData} HeadingText="Top Products" />
+      <Item topProductData={topPostsData} HeadingText="Top Posts" />
+      <Item topProductData={topStoresData} HeadingText="Top Stores" />
     </>
   );
 };
