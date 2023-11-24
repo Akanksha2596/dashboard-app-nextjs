@@ -1,3 +1,4 @@
+import { HeadingContainer, Wrapper } from "@/styles/card.styles";
 import {
   ContentDiv,
   Heading,
@@ -6,95 +7,71 @@ import {
   SingleItem,
   SubContentDiv,
   SubHeading,
+  ItemWrapper,
 } from "@/styles/item.styles";
 import React from "react";
-import PostItem from "./PostItem";
-import StoreItem from "./StoreItem";
+import { SlArrowRight } from "react-icons/sl";
 
-export const Item = () => {
+type Product = {
+  id?: number;
+  name?: string;
+  image?: string;
+  price?: number;
+  type?: string;
+  percent?: number;
+  cvrPercent?: number;
+};
+
+type MyComponentProps = {
+  topProductData: Product[];
+  HeadingText: string;
+};
+
+export const Item = (props: MyComponentProps) => {
   return (
     <>
-      <ItemContainer>
-        <SingleItem>
-          <ProductImage src="/nail-polish.png" />
-          <ContentDiv>
-            <Heading>Nioxin Thickening Gel 140ml</Heading>
-            <SubContentDiv>
-              <SubHeading> 2 SEK / Click </SubHeading>
-              <SubHeading> Pricerunner</SubHeading>
-            </SubContentDiv>
-          </ContentDiv>
-          <ContentDiv>
-            <Heading>SEK 625</Heading>
-            <SubHeading> CVR 17% </SubHeading>
-          </ContentDiv>
-        </SingleItem>
-      </ItemContainer>
-      
-      {/* <ItemContainer>
-        <SingleItem>
-          <ProductImage src="/Product Image (1).png" />
-          <ContentDiv>
-            <Heading>Prada Paradoxe Eau De Parfum 50 ml</Heading>
-            <SubContentDiv>
-              <SubHeading> 12% </SubHeading>
-              <SubHeading> Lykor</SubHeading>
-            </SubContentDiv>
-          </ContentDiv>
-          <ContentDiv>
-            <Heading>SEK 625</Heading>
-            <SubHeading>CVR 17% </SubHeading>
-          </ContentDiv>
-        </SingleItem>
-      </ItemContainer>
-      <ItemContainer>
-        <SingleItem>
-          <ProductImage src="/Product Image (2).png" />
-          <ContentDiv>
-            <Heading>DeoDoc Violet Cotton Intimtvål 100 ml</Heading>
-            <SubContentDiv>
-              <SubHeading>12% </SubHeading>
-              <SubHeading> Lyko</SubHeading>
-            </SubContentDiv>
-          </ContentDiv>
-          <ContentDiv>
-            <Heading>SEK 625</Heading>
-            <SubHeading> CVR 17% </SubHeading>
-          </ContentDiv>
-        </SingleItem>
-      </ItemContainer>
-      <ItemContainer>
-        <SingleItem>
-          <ProductImage src="/Product Image (3).png" />
-          <ContentDiv>
-            <Heading>ghd Curve Soft Curl Tong</Heading>
-            <SubContentDiv>
-              <SubHeading> 12% </SubHeading>
-              <SubHeading>Lyko</SubHeading>
-            </SubContentDiv>
-          </ContentDiv>
-          <ContentDiv>
-            <Heading>SEK 625</Heading>
-            <SubHeading> CVR 17% </SubHeading>
-          </ContentDiv>
-        </SingleItem>
-      </ItemContainer>
-      <ItemContainer>
-        <SingleItem>
-          <ProductImage src="/nail-polish.png" />
-          <ContentDiv>
-            <Heading>Nioxin Thickening Gel 140ml</Heading>
-            <SubContentDiv>
-              <SubHeading>2 SEK / Click</SubHeading>
-              <SubHeading> Pricerunner</SubHeading>
-            </SubContentDiv>
-          </ContentDiv>
-          <ContentDiv>
-            <Heading>SEK 625</Heading>
-            <SubHeading> 312 Clicks </SubHeading>
-          </ContentDiv>
-        </SingleItem>
-      </ItemContainer> */}
+      <Wrapper className="test">
+        <HeadingContainer>
+          <h3>{props.HeadingText}</h3>
+          <span>
+            <SlArrowRight />
+          </span>
+        </HeadingContainer>
+        <ItemWrapper>
+          {props.topProductData.map((topProduct) => {
+            return (
+              <ItemContainer>
+                <SingleItem>
+                  {props.HeadingText === "Top Stores" ? (
+                    ""
+                  ) : (
+                    <ProductImage src={topProduct.image} />
+                  )}
+                  <ContentDiv>
+                    <Heading>{topProduct.name}</Heading>
+                    <SubContentDiv>
+                      {props.HeadingText === "Top Products" ? (
+                        <SubHeading> SEK {topProduct.price}</SubHeading>
+                      ) : (
+                        ""
+                      )}
+                      <SubHeading>{topProduct.type}</SubHeading>
+                    </SubContentDiv>
+                  </ContentDiv>
+                  <ContentDiv>
+                    <Heading>SEK {topProduct.percent}</Heading>
+                    {props.HeadingText === "Top Products" ? (
+                      <SubHeading> CVR {topProduct.cvrPercent} </SubHeading>
+                    ) : (
+                      ""
+                    )}
+                  </ContentDiv>
+                </SingleItem>
+              </ItemContainer>
+            );
+          })}
+        </ItemWrapper>
+      </Wrapper>
     </>
   );
 };
