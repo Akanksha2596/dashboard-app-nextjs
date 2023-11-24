@@ -13,10 +13,10 @@ export const HeadingContainer = styled.div`
   display: flex;
   justify-content: space-around;
   width: 390px;
-  height: 90px;
   padding: 0px, 32px, 0px, 32px;
   justify: space-between;
   border-bottom: 0.8px solid rgba(221, 221, 221, 1);
+  padding: 30px;
 `;
 
 export const HeadingText = styled.h3`
@@ -36,20 +36,7 @@ export const ArrowIcon = styled.img`
   gap: 10px;
 `;
 
-export const SingleContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 390px;
-  height: 440px;
-  border-radius: 10px;
-  // gap: 16px;
+export const Wrapper = styled.div`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-
-  &::-webkit-scrollbar {
-    width: 10px;
-    background: #f1f1f1;
-  }
+  margin-top: 10px;
 `;
