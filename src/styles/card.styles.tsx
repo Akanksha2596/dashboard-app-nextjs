@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import Image from "next/image";
 type ColumnProps = {
   size?: number;
   sizeSm?: number;
@@ -14,12 +14,11 @@ type ColumnProps = {
 
 export const HeadingContainer = styled.div`
   display: flex;
-  justify-content: space-around;
-  width: 390px;
   padding: 0px, 32px, 0px, 32px;
   justify-content: space-between;
   border-bottom: 0.8px solid rgba(221, 221, 221, 1);
   padding: 30px;
+  margin-bottom: 15px;
 `;
 
 export const HeadingText = styled.h3`
@@ -33,15 +32,9 @@ export const HeadingText = styled.h3`
   height: 26px;
 `;
 
-export const ArrowIcon = styled.img`
-  width: 8.3px;
-  height: 14.52px;
-  gap: 10px;
-`;
-
 export const Wrapper = styled.div`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  margin-top: 10px;
+  margin-top: 20px;
 `;
 
 export const Columns = styled.div`
@@ -49,11 +42,11 @@ export const Columns = styled.div`
   width: 100%;
   display: flex;
 
-  @media (max-width: 1200px) {
+  /* @media (max-width: 1200px) {
     display: flex;
     flex-direction: column;
     padding: 5% 0 5% 0;
-  }
+  } */
 
   @media (max-width: 992px) {
     display: flex;
@@ -80,25 +73,28 @@ export const Column = styled.div<ColumnProps>`
   margin-top: ${({ marginTop }) => marginTop + `px`};
   margin-left: ${({ marginLeft }) => marginLeft + `px`};
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  height: 50vh;
+  height: 80vh;
+  border-radius: 10px;
+  margin: 5px;
+  min-width: 390px;
 
   @media (max-width: 576px) {
     flex: ${({ sizeSm }) => sizeSm};
-    border-radius: 0px;
+    border-radius: 10px;
   }
 
   @media (max-width: 768px) {
     flex: ${({ sizeMd }) => sizeMd};
-    border-radius: 0px;
+    border-radius: 10px;
   }
 
   @media (max-width: 992px) {
     flex: ${({ sizeLg }) => sizeLg};
-    border-radius: 0px;
+    border-radius: 10px;
   }
 
   @media (max-width: 1200px) {
     flex: ${({ sizeXl }) => sizeXl};
-    border-radius: 0px;
+    border-radius: 10px;
   }
 `;

@@ -7,7 +7,7 @@ export const GraphContainer = styled.div`
   border-radius: 10px;
   gap: 10px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  margin: auto;
+  margin-bottom: 15px;
 `;
 
 export const GraphHeading = styled.h3`

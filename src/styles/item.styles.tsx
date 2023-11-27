@@ -2,9 +2,11 @@ import styled from "styled-components";
 // import Image from "next/image";
 
 export const ItemContainer = styled.div`
+  display: flex;
   height: 70px;
   padding: 10px 32px;
-  border-bottom: 0.8px solid rgba(221, 221, 221, 1);
+  border-bottom: 0.8px solid rgba(221, 221, 221, 1); 
+  min-width: 390px;
 `;
 
 export const SingleItem = styled.div`
@@ -54,15 +56,18 @@ export const SubHeading = styled.span`
   letter-spacing: 0em;
   text-align: left;
   color: black;
+
+  &.percent {
+    background-color: rgba(244, 240, 236, 1);
+    border-radius: 2.78px;
+  }
 `;
 
 export const ItemWrapper = styled.div`
-  width: 390px;
-  height: 440px;
+  max-height: 349px;
   overflow-y: scroll;
   overflow-x: hidden;
-  max-height: 349px;
-
+  
   &::-webkit-scrollbar {
     width: 1px;
     background: #f1f1f1;
