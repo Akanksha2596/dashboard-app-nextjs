@@ -88,8 +88,7 @@ export const Button = styled.button`
   &:hover {
     border: 1px solid black;
     color: black;
-    opacity: 0.8;
-    transform: scale(0.98);
+    cursor: pointer;
   }
 `;
 
@@ -109,6 +108,7 @@ export const DateInput = styled(DatePicker)`
   letter-spacing: 0em;
   text-align: left;
   color: rgba(58, 58, 58, 1);
+  cursor: pointer;
 `;
 
 export const ButtonText = styled.text`
@@ -124,3 +124,6 @@ export const RootWrapper = styled.div`
   margin: 50px;
   // outline: solid 1px black;
 `;
+export const TabWrapper = styled.div`
+  display: flex;
+`

@@ -5,7 +5,7 @@ export const ItemContainer = styled.div`
   display: flex;
   height: 70px;
   padding: 10px 32px;
-  border-bottom: 0.8px solid rgba(221, 221, 221, 1); 
+  border-bottom: 0.8px solid rgba(221, 221, 221, 1);
   min-width: 390px;
 `;
 
@@ -67,7 +67,7 @@ export const ItemWrapper = styled.div`
   max-height: 349px;
   overflow-y: scroll;
   overflow-x: hidden;
-  
+
   &::-webkit-scrollbar {
     width: 1px;
     background: #f1f1f1;
