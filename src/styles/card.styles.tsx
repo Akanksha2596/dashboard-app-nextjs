@@ -22,7 +22,7 @@ export const HeadingContainer = styled.div`
 `;
 
 export const HeadingText = styled.h3`
-  font-family: Strawford;
+  /* font-family: Strawford; */
   font-size: 22px;
   font-weight: 500;
   line-height: 26px;
