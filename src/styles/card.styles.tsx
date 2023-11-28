@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Image from "next/image";
+
 type ColumnProps = {
   size?: number;
   sizeSm?: number;
@@ -32,21 +32,16 @@ export const HeadingText = styled.h3`
   height: 26px;
 `;
 
-export const Wrapper = styled.div`
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  margin-top: 20px;
-`;
-
 export const Columns = styled.div`
   height: 100%;
   width: 100%;
   display: flex;
 
-  /* @media (max-width: 1200px) {
+  @media (max-width: 1200px) {
     display: flex;
     flex-direction: column;
     padding: 5% 0 5% 0;
-  } */
+  }
 
   @media (max-width: 992px) {
     display: flex;
@@ -76,7 +71,7 @@ export const Column = styled.div<ColumnProps>`
   height: 80vh;
   border-radius: 10px;
   margin: 5px;
-  min-width: 390px;
+  min-width: 32%;
 
   @media (max-width: 576px) {
     flex: ${({ sizeSm }) => sizeSm};

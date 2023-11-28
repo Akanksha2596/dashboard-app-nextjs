@@ -4,10 +4,8 @@ import Tabs from "@/components/Tabs";
 import topProductsData from "../../TopProductsData.json";
 import topStoresData from "../../TopStoresData.json";
 import topPostsData from "../../TopPostsData.json";
-import ButtonFilter from "@/components/ButtonFilter";
 import { Item } from "@/components/Item";
-import { Wrapper } from "@/styles/card.styles";
-import { RootWrapper } from "@/styles/button.styles";
+import { Wrapper } from "@/styles/item.styles";
 
 const Content = styled.div`
   margin-top: 20px;
@@ -23,7 +21,6 @@ const Page: React.FC = () => {
           <Content>
             {activeTab === "Top Products" && (
               <>
-                <ButtonFilter />
                 <Wrapper>
                   <Item
                     topProductData={topProductsData}
@@ -34,7 +31,6 @@ const Page: React.FC = () => {
             )}
             {activeTab === "Top Posts" && (
               <>
-                <ButtonFilter />
                 <Wrapper>
                   <Item topProductData={topPostsData} HeadingText="Top Posts" />
                 </Wrapper>
@@ -42,7 +38,6 @@ const Page: React.FC = () => {
             )}
             {activeTab === "Top Stores" && (
               <>
-                <ButtonFilter />
                 <Wrapper>
                   <Item
                     topProductData={topStoresData}

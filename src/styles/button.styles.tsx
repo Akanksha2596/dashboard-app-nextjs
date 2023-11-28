@@ -45,12 +45,13 @@ export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
   padding-left: 32px;
-  padding-bottom: 10px;
   gap: 5px;
   flex-wrap: nowrap;
   overflow-x: auto;
   margin-bottom: 15px;
+  padding-bottom: 10px;
 
   &::-webkit-scrollbar {
     height: 5px;
@@ -76,7 +77,6 @@ export const Button = styled.button`
   margin-right: 10px;
   align-items: center;
   align-self: center;
-  width: 89px;
   height: 39px;
   padding: 0px 14px;
   border-radius: 20px;
@@ -122,8 +122,33 @@ export const ButtonText = styled.text`
 
 export const RootWrapper = styled.div`
   margin: 50px;
-  // outline: solid 1px black;
+  /* outline: solid 1px black; */
 `;
+
 export const TabWrapper = styled.div`
   display: flex;
-`
+  flex-direction: row;
+  justify-content: space-between;
+
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-bottom: 15px;
+
+  &::-webkit-scrollbar {
+    height: 5px;
+    border-radius: 5px;
+    background-color: lightgray;
+  }
+
+  @media (max-width: 992px) {
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+  }
+
+  @media (max-width: 576px) {
+    justify-content: flex-start;
+  }
+`;

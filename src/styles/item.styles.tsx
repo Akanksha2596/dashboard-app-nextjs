@@ -1,18 +1,25 @@
 import styled from "styled-components";
-// import Image from "next/image";
 
-export const ItemContainer = styled.div`
-  display: flex;
-  height: 70px;
-  padding: 10px 32px;
-  border-bottom: 0.8px solid rgba(221, 221, 221, 1);
-  min-width: 390px;
-`;
+// export const ItemContainer = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   border-bottom: 0.8px solid rgba(221, 221, 221, 1);
+// `;
 
 export const SingleItem = styled.div`
   display: flex;
-  height: 49.17px;
+  justify-content: space-between;
+  flex-direction: row;
+  /* height: 49.17px; */
+  height: 70px;
+  padding: 10px 32px;
   gap: 10px;
+  width: 100%;
+  border-bottom: 0.8px solid rgba(221, 221, 221, 1);
+`;
+
+export const ImgContentDiv = styled.div`
+  display: flex;
 `;
 
 export const ProductImage = styled.img`
@@ -21,20 +28,21 @@ export const ProductImage = styled.img`
   gap: 10px;
 `;
 
-export const ContentDiv = styled.div`
+export const ContentDiv = styled.div<{
+  $flexEnd?: boolean;
+}>`
+  align-items: ${(props) => (props.$flexEnd ? "flex-end" : "")};
   display: flex;
   flex-direction: column;
-  align-items: space-between;
   width: 217px;
   height: 41.17px;
   gap: 4px;
 `;
 
 export const SubContentDiv = styled.div`
+  display: flex;
   width: 217px;
   height: 16.17px;
-  display: flex;
-  justify-content: flex-start;
   gap: 10px;
 `;
 
@@ -72,4 +80,10 @@ export const ItemWrapper = styled.div`
     width: 1px;
     background: #f1f1f1;
   }
+`;
+
+export const Wrapper = styled.div`
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-top: 20px;
+  border-radius: 10px;
 `;
