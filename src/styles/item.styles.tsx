@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { myFont } from "@/pages/_app";
 // export const ItemContainer = styled.div`
 //   display: flex;
 //   justify-content: space-between;
@@ -37,6 +37,7 @@ export const ContentDiv = styled.div<{
   width: 217px;
   height: 41.17px;
   gap: 4px;
+  font-family: Strawford;
 `;
 
 export const SubContentDiv = styled.div`
@@ -44,6 +45,7 @@ export const SubContentDiv = styled.div`
   width: 217px;
   height: 16.17px;
   gap: 10px;
+  font-family: Strawford;
 `;
 
 export const Heading = styled.p`
