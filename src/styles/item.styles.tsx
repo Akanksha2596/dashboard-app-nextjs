@@ -37,7 +37,7 @@ export const ContentDiv = styled.div<{
   width: 217px;
   height: 41.17px;
   gap: 4px;
-  font-family: Strawford;
+  /* font-family: Strawford; */
 `;
 
 export const SubContentDiv = styled.div`
@@ -45,11 +45,11 @@ export const SubContentDiv = styled.div`
   width: 217px;
   height: 16.17px;
   gap: 10px;
-  font-family: Strawford;
+  /* font-family: Strawford; */
 `;
 
 export const Heading = styled.p`
-  font-family: Strawford;
+  /* font-family: Strawford; */
   font-size: 14px;
   font-weight: 500;
   line-height: 21px;
@@ -59,7 +59,7 @@ export const Heading = styled.p`
 `;
 
 export const SubHeading = styled.span`
-  font-family: Strawford;
+  /* font-family: Strawford; */
   font-size: 12px;
   font-weight: 400;
   line-height: 14px;
