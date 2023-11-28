@@ -9,7 +9,6 @@ import { RootWrapper } from "@/styles/button.styles";
 import { Column, Columns } from "@/styles/card.styles";
 import { SlArrowRight } from "react-icons/sl";
 
-
 const MainContainer = () => {
   return (
     <RootWrapper>
