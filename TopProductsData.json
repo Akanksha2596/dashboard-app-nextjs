@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Product 1",
+    "name": "Nioxin Thickening Gel 140ml",
     "image": "/nail-polish.png",
     "price": 974,
     "type": "Pricerunner",
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "name": "Product 2",
+    "name": "Prada Paradoxe Eau De Parfum 50 ml",
     "image": "/Product Image (1).png",
     "price": 389,
     "type": "Lyco",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "name": "Product 3",
+    "name": "DeoDoc Violet Cotton Intimtvål 100 ml",
     "image": "/Product Image (2).png",
     "price": 996,
     "type": "Pricerunner",
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "name": "Product 4",
+    "name": "ghd Curve Soft Curl Tong",
     "image": "/Product Image (3).png",
     "price": 259,
     "type": "Lyco",
@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "name": "Product 5",
+    "name": "Nioxin Thickening Gel 140ml",
     "image": "/nail-polish.png",
     "price": 617,
     "type": "Pricerunner",
