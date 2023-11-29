@@ -96,23 +96,21 @@ export const DateInput = styled(DatePicker)`
   display: flex;
   align-items: center;
   width: 146px;
+  text-align: center;
   height: 39px;
-  padding: 0px 10px;
+  padding: 5px;
   border-radius: 20px;
   border: 1px solid rgba(58, 58, 58, 1);
   gap: 5px;
-  font-family: Strawford;
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;
   letter-spacing: 0em;
-  text-align: left;
   color: rgba(58, 58, 58, 1);
   cursor: pointer;
 `;
 
 export const ButtonText = styled.text`
-  font-family: Strawford;
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;

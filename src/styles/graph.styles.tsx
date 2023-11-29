@@ -14,12 +14,12 @@ export const GraphHeading = styled.h3`
   height: 86px;
   padding: 32px, 32px, 28px, 32px;
   gap: 16px;
-  font-family: Strawford;
   font-size: 22px;
   font-weight: 500;
   line-height: 26px;
   letter-spacing: 0em;
   text-align: left;
+  padding: 30px;
 `;
 
 export const GraphImage = styled.img`
@@ -32,7 +32,8 @@ export const GraphReading = styled.h1`
   height: 82px;
   padding: 0px, 32px, 32px, 32px;
   gap: 16px;
-  font-family: Strawford;
+  padding-left: 20px;
+  padding-right: 20px;
   font-size: 42px;
   font-weight: 500;
   line-height: 50px;
