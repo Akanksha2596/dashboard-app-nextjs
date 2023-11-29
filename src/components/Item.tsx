@@ -1,4 +1,6 @@
 import { HeadingContainer } from "@/styles/card.styles";
+// import img from "public/nail-polish.png";
+// import Image from "next/image";
 import {
   ContentDiv,
   Heading,
@@ -41,9 +43,9 @@ export const Item = (props: MyComponentProps) => {
               props.HeadingText === "Top Products"
                 ? "/topProducts"
                 : props.HeadingText === "Top Posts"
-                ? "/topPosts"
+                ? "/topProducts"
                 : props.HeadingText === "Top Stores"
-                ? "/topStores"
+                ? "/topProducts"
                 : ""
             }
           >
@@ -54,41 +56,55 @@ export const Item = (props: MyComponentProps) => {
       <ItemWrapper>
         {props.topProductData.map((topProduct) => {
           return (
-            // <ItemContainer>
-              <SingleItem>
-                <ImgContentDiv>
-                  {props.HeadingText === "Top Stores" ? (
-                    ""
-                  ) : (
-                    <ProductImage src={topProduct.image} />
-                  )}
-                  <ContentDiv>
-                    <Heading>{topProduct.name}</Heading>
-                    <SubContentDiv>
-                      {props.HeadingText === "Top Products" ? (
-                        <SubHeading className="percent">
-                          {topProduct.percent}%
-                        </SubHeading>
-                      ) : (
-                        ""
-                      )}
-                      <SubHeading>{topProduct.type}</SubHeading>
-                    </SubContentDiv>
-                  </ContentDiv>
-                </ImgContentDiv>
-                <ContentDiv $flexEnd={true}>
-                  <Heading>SEK {topProduct.percent}</Heading>
-                  {props.HeadingText === "Top Products" ? (
-                    <SubHeading>CVR {topProduct.cvrPercent}% </SubHeading>
-                  ) : (
-                    ""
-                  )}
+            <SingleItem>
+              <ImgContentDiv>
+                {props.HeadingText === "Top Stores" ? (
+                  ""
+                ) : (
+                  <div>
+                    <ProductImage src={topProduct.image} alt="productimage" />
+                  </div>
+                )}
+                <ContentDiv>
+                  <Heading>
+                    {topProduct.name}
+                  </Heading>
+                  <SubContentDiv>
+                    {props.HeadingText === "Top Products" ? (
+                      <SubHeading className="percent">
+                        {topProduct.percent}%
+                      </SubHeading>
+                    ) : (
+                      ""
+                    )}
+                    <SubHeading>{topProduct.type}</SubHeading>
+                  </SubContentDiv>
                 </ContentDiv>
-              </SingleItem>
-            //  </ItemContainer>
+              </ImgContentDiv>
+              <div>
+                <Heading>SEK {topProduct.percent}</Heading>
+                {props.HeadingText === "Top Products" ? (
+                  <SubHeading>CVR {topProduct.cvrPercent}% </SubHeading>
+                ) : (
+                  ""
+                )}
+              </div>
+            </SingleItem>
           );
         })}
       </ItemWrapper>
     </>
   );
 };
+<div>
+  <div>
+    <img />
+    <div>
+      <span>Product Name</span>
+      <div>
+        <span>20%</span>
+        <span>Lyco</span>
+      </div>
+    </div>
+  </div>
+</div>;

@@ -19,21 +19,21 @@ const MainContainer = () => {
           <Item
             topProductData={topProductData}
             HeadingText="Top Products"
-            icon={<SlArrowRight/>}
+            icon={<SlArrowRight />}
           />
         </Column>
         <Column size={4}>
           <Item
             topProductData={topPostsData}
             HeadingText="Top Posts"
-            icon={<SlArrowRight/>}
+            icon={<SlArrowRight />}
           />
         </Column>
         <Column size={4}>
           <Item
             topProductData={topStoresData}
             HeadingText="Top Stores"
-            icon={<SlArrowRight/>}
+            icon={<SlArrowRight />}
           />
         </Column>
       </Columns>
