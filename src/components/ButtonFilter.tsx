@@ -1,11 +1,12 @@
-"use client";
+// "use client";
 import React, { useState } from "react";
 import SingleButton from "./SingleButton";
 import { ButtonContainer } from "@/styles/button.styles";
 import DateComponent from "./DateComponent";
+import { start } from "repl";
 
 const ButtonFilter = () => {
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [selectedOption, setSelectedOption] = useState<string | null>();
   const [selectedDateRange, setSelectedDateRange] = useState<{
     start: Date | null;
     end: Date | null;
