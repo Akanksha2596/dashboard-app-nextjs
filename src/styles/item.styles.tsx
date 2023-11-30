@@ -1,5 +1,5 @@
 import styled from "styled-components";
-// import { myFont } from "@/pages/_app";
+
 // export const ItemContainer = styled.div`
 //   display: flex;
 //   justify-content: space-between;
@@ -9,75 +9,93 @@ import styled from "styled-components";
 export const SingleItem = styled.div`
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  /* flex-direction: row; */
   /* height: 49.17px; */
   /* height: 70px; */
   /* padding: 10px 32px; */
-  padding: 10px 20px 10px 20px;
+  /* padding: 10px 20px; */
   gap: 10px;
-  /* width: 100%; */
   border-bottom: 0.8px solid rgba(221, 221, 221, 1);
+  &.topProducts {
+    padding: 10px 20px 10px 20px;
+  }
+  &.topPosts {
+    padding: 10px 20px;
+  }
+  &.topStores {
+    padding: 20px 26px;
+  }
 `;
 
 export const ImgContentDiv = styled.div`
   display: flex;
- 
+  width: 100%;
 `;
 
 export const ProductImage = styled.img`
-  /* max-width: fit-content;
-  max-width: fit-content;
-  /* gap: 10px;*/
-  /* gap: 10px;
+  display: "flex";
+  flex-direction: "column";
   width: 40px;
   aspect-ratio: auto 40 / 40;
-  height: 40px; */
-  margin-right: 5px;
-  width: 25px;
+  height: 40px;
+  background: "white";
+  border: "1px solid blue";
+  justify-content: "center";
+  align-items: center;
+  margin-right: 10px;
 `;
 
 export const ContentDiv = styled.div<{
   $flexEnd?: boolean;
 }>`
-  align-items: ${(props) => (props.$flexEnd ? "flex-end" : "center")};
-  /* display: flex; */
+  align-items: ${(props) => (props.$flexEnd ? "flex-end" : "")};
+  display: flex;
   flex-direction: column;
-  /* width: 217px; */
-  /* height: 41.17px; */
+  align-items: flex-start;
+  justify-content: center;
   gap: 4px;
   align-self: stretch;
-  /* justify-content: center; */
-  align-items: flex-end;
-  /* width: 50%; */
+  /* border: 1px solid red; */
 `;
 
 export const SubContentDiv = styled.div`
-  display: flex;
+  /* display: flex;
   width: 217px;
   height: 16.17px;
   gap: 10px;
   /* flex: 1 0 0;
   align-self: center; */
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  flex: 1 0 0;
+  width: 100%;
+  /* border: 1px solid green; */
 `;
 
 export const Heading = styled.p`
+  overflow: hidden;
   color: var(--Black, #3a3a3a);
   text-overflow: ellipsis;
   font-size: 14px;
-  line-height: 21px;
   font-style: normal;
   font-weight: 600;
-  overflow: hidden;
-  white-space: nowrap;
+  line-height: normal;
+  /* width: 100%; */
+  /* width: 50%; */
+  /* white-space: nowrap; */
+  /* display: -webkit-box; */
+  /* -webkit-box-orient: vertical; */
+  /* -webkit-line-clamp: 1; */
+  /* flex: 1 0 0; */
 `;
 
 export const SubHeading = styled.span`
+  color: var(--Black, #3a3a3a);
   font-size: 12px;
+  font-style: normal;
   font-weight: 400;
-  line-height: 14px;
-  letter-spacing: 0em;
-  text-align: center;
-  color: black;
+  line-height: normal;
 
   &.percent {
     display: flex;
