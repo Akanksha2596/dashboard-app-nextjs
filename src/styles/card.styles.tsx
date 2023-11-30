@@ -18,7 +18,6 @@ export const HeadingContainer = styled.div`
   justify-content: space-between;
   border-bottom: 0.8px solid rgba(221, 221, 221, 1);
   padding: 30px;
-  margin-bottom: 15px;
 `;
 
 export const HeadingText = styled.h3`
