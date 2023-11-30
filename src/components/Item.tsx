@@ -13,7 +13,6 @@ import {
   ImgContentDiv,
 } from "@/styles/item.styles";
 import React from "react";
-// import { SlArrowRight } from "react-icons/sl";
 import Link from "next/link";
 
 type Product = {
@@ -28,7 +27,7 @@ type Product = {
 
 export type MyComponentProps = {
   topProductData: Product[];
-  HeadingText: string;
+  HeadingText?: string;
   icon?: any;
 };
 
@@ -43,9 +42,9 @@ export const Item = (props: MyComponentProps) => {
               props.HeadingText === "Top Products"
                 ? "/topProducts"
                 : props.HeadingText === "Top Posts"
-                ? "/topProducts"
+                ? "/topPosts"
                 : props.HeadingText === "Top Stores"
-                ? "/topProducts"
+                ? "/topStores"
                 : ""
             }
           >
@@ -56,19 +55,38 @@ export const Item = (props: MyComponentProps) => {
       <ItemWrapper>
         {props.topProductData.map((topProduct) => {
           return (
-            <SingleItem>
+            <SingleItem
+              className={
+                props.HeadingText === "Top Products"
+                  ? "topProducts"
+                  : props.HeadingText === "Top Posts"
+                  ? "topProducts"
+                  : props.HeadingText === "Top Stores"
+                  ? "topProducts"
+                  : ""
+              }
+            >
               <ImgContentDiv>
                 {props.HeadingText === "Top Stores" ? (
                   ""
                 ) : (
-                  <div>
-                    <ProductImage src={topProduct.image} alt="productimage" />
-                  </div>
+                  // <div
+                  //   style={{
+                  //     display: "flex",
+                  //     flexDirection: "column",
+                  //     alignItems: "center",
+                  //     justifyContent: "center",
+                  //     flex: "1 0 0",
+                  //     background: "white",
+                  //     marginRight: "5px",
+                  //     border: "1px solid blue",
+                  //   }}
+                  // >
+                  <ProductImage src={topProduct.image} alt="productimage" />
+                  //  </div>
                 )}
                 <ContentDiv>
-                  <Heading>
-                    {topProduct.name}
-                  </Heading>
+                  <Heading>{topProduct.name}</Heading>
                   <SubContentDiv>
                     {props.HeadingText === "Top Products" ? (
                       <SubHeading className="percent">
@@ -84,7 +102,10 @@ export const Item = (props: MyComponentProps) => {
               <div>
                 <Heading>SEK {topProduct.percent}</Heading>
                 {props.HeadingText === "Top Products" ? (
-                  <SubHeading>CVR {topProduct.cvrPercent}% </SubHeading>
+                  <SubContentDiv>
+                    <SubHeading>CVR</SubHeading>
+                    <SubHeading>{topProduct.cvrPercent}%</SubHeading>
+                  </SubContentDiv>
                 ) : (
                   ""
                 )}
@@ -96,15 +117,3 @@ export const Item = (props: MyComponentProps) => {
     </>
   );
 };
-<div>
-  <div>
-    <img />
-    <div>
-      <span>Product Name</span>
-      <div>
-        <span>20%</span>
-        <span>Lyco</span>
-      </div>
-    </div>
-  </div>
-</div>;
