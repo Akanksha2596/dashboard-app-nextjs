@@ -81,13 +81,22 @@ export const Heading = styled.p`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  /* width: 100%; */
-  /* width: 50%; */
-  /* white-space: nowrap; */
-  /* display: -webkit-box; */
-  /* -webkit-box-orient: vertical; */
-  /* -webkit-line-clamp: 1; */
-  /* flex: 1 0 0; */
+
+  &.ellipsis {
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /* start showing ellipsis when 1st line is reached */
+    white-space: pre-wrap; /* let the text wrap preserving spaces */
+  }
+
+  /* &.storespara{
+    display: flex;
+    flex: column;
+    align-items: center;
+    align-self: center;
+    text-align:center;
+  } */
 `;
 
 export const SubHeading = styled.span`

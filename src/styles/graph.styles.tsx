@@ -10,7 +10,7 @@ export const GraphContainer = styled.div`
   margin-bottom: 15px;
 `;
 
-export const GraphHeading = styled.h3`
+export const GraphHeading = styled.p`
   height: 86px;
   padding: 32px, 32px, 28px, 32px;
   gap: 16px;
@@ -18,25 +18,30 @@ export const GraphHeading = styled.h3`
   font-weight: 500;
   line-height: 26px;
   letter-spacing: 0em;
-  text-align: left;
+  /* text-align: left; */
   padding: 30px;
+  display: flex;
+  padding: 32px 32px 28px 32px;
+  align-items: center;
+  /* gap: 16px; */
+  align-self: stretch;
 `;
 
-export const GraphImage = styled.img`
+export const GraphImage = styled.div`
   height: 108px;
   gap: 10px;
 `;
 
-export const GraphReading = styled.h1`
+export const GraphReading = styled.p`
   display: flex;
   height: 82px;
-  padding: 0px, 32px, 32px, 32px;
+  /* padding: 0px, 32px, 32px, 32px; */
   gap: 16px;
-  padding-left: 20px;
+  padding-left: 25px;
   padding-right: 20px;
   font-size: 42px;
   font-weight: 500;
   line-height: 50px;
   letter-spacing: 0em;
-  text-align: center;
+  /* text-align: center; */
 `;
