@@ -29,12 +29,15 @@ export type MyComponentProps = {
   topProductData: Product[];
   HeadingText?: string;
   icon?: any;
+  screen?: boolean;
+  maxHeight?: boolean;
 };
 
 export const Item = (props: MyComponentProps) => {
+  console.log(props, "props");
   return (
     <>
-      <HeadingContainer>
+      <HeadingContainer screen={props.screen}>
         <h3>{props.HeadingText}</h3>
         <span>
           <Link
@@ -52,17 +55,18 @@ export const Item = (props: MyComponentProps) => {
           </Link>
         </span>
       </HeadingContainer>
-      <ItemWrapper>
+      <ItemWrapper maxHeight={true}>
         {props.topProductData.map((topProduct) => {
           return (
             <SingleItem
+              key={topProduct.id}
               className={
                 props.HeadingText === "Top Products"
                   ? "topProducts"
                   : props.HeadingText === "Top Posts"
-                  ? "topProducts"
+                  ? "topPosts"
                   : props.HeadingText === "Top Stores"
-                  ? "topProducts"
+                  ? "topStores"
                   : ""
               }
             >
@@ -70,23 +74,14 @@ export const Item = (props: MyComponentProps) => {
                 {props.HeadingText === "Top Stores" ? (
                   ""
                 ) : (
-                  // <div
-                  //   style={{
-                  //     display: "flex",
-                  //     flexDirection: "column",
-                  //     alignItems: "center",
-                  //     justifyContent: "center",
-                  //     flex: "1 0 0",
-                  //     background: "white",
-                  //     marginRight: "5px",
-                  //     border: "1px solid blue",
-                  //   }}
-                  // >
                   <ProductImage src={topProduct.image} alt="productimage" />
-                  //  </div>
                 )}
                 <ContentDiv>
-                  <Heading>{topProduct.name}</Heading>
+                  {props.HeadingText === "Top Posts" ? (
+                    <Heading className="postspara">{topProduct.name}</Heading>
+                  ) : (
+                    <Heading className="ellipsis">{topProduct.name}</Heading>
+                  )}
                   <SubContentDiv>
                     {props.HeadingText === "Top Products" ? (
                       <SubHeading className="percent">
@@ -100,7 +95,11 @@ export const Item = (props: MyComponentProps) => {
                 </ContentDiv>
               </ImgContentDiv>
               <div>
-                <Heading>SEK {topProduct.percent}</Heading>
+                {props.HeadingText === "Top Posts" ? (
+                  <Heading style={{ paddingTop: "7px" }}>SEK</Heading>
+                ) : (
+                  <Heading>SEK {topProduct.percent}</Heading>
+                )}
                 {props.HeadingText === "Top Products" ? (
                   <SubContentDiv>
                     <SubHeading>CVR</SubHeading>

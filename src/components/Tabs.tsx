@@ -49,14 +49,13 @@ export type TabsProps = {
 
 const Tabs: React.FC<TabsProps> = ({ tabs, defaultTab, children }) => {
   const [activeTab, setActiveTab] = useState(defaultTab);
-
-  const handleTabClick = (tab: string) => {
-    console.log("Clicked tab:", tab);
-    setActiveTab(tab);
+  
+  const handleDateChange = (start: Date | null, end: Date | null) => {
+    // Handle date change logic here
+    console.log("Date range changed:", start, end);
   };
-
   return (
-    <RootWrapper>
+    <RootWrapper className="removeMargin">
       <TabWrapper>
         <TabButtonWrapper>
           <ArrowDiv>
@@ -64,17 +63,23 @@ const Tabs: React.FC<TabsProps> = ({ tabs, defaultTab, children }) => {
               <SlArrowLeft />
             </Link>
           </ArrowDiv>
-          {tabs.map((tab) => (
-            <TabButton
-              key={tab}
-              isActive={activeTab === tab}
-              onClick={() => handleTabClick(tab)}
-            >
-              {tab}
+          <Link href="/topProducts">
+            <TabButton isActive={activeTab === "Top Products"}>
+              Top Products
             </TabButton>
-          ))}
+          </Link>
+          <Link href="/topPosts">
+            <TabButton isActive={activeTab === "Top Posts"}>
+              Top Posts
+            </TabButton>
+          </Link>
+          <Link href="/topStores">
+            <TabButton isActive={activeTab === "Top Stores"}>
+              Top Stores
+            </TabButton>
+          </Link>
         </TabButtonWrapper>
-        <ButtonFilter />
+        <ButtonFilter onDateChange={handleDateChange} />
       </TabWrapper>
       <div>{children(activeTab)}</div>
     </RootWrapper>

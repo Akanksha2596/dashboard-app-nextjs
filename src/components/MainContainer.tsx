@@ -1,6 +1,4 @@
-import React from "react";
-import ButtonFilter from "./ButtonFilter";
-import Graph from "./Graph";
+import React, { useState, useEffect } from "react";
 import { Item } from "./Item";
 import topProductData from "../../TopProductsData.json";
 import topPostsData from "../../TopPostsData.json";
@@ -8,11 +6,11 @@ import topStoresData from "../../TopStoresData.json";
 import { RootWrapper } from "@/styles/button.styles";
 import { Column, Columns } from "@/styles/card.styles";
 import { SlArrowRight } from "react-icons/sl";
+import Graph from "./Graph";
 
 const MainContainer = () => {
   return (
-    <RootWrapper>
-      <ButtonFilter />
+    <RootWrapper className="removeMargin">
       <Graph />
       <Columns>
         <Column size={4}>
