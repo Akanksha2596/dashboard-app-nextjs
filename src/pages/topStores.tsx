@@ -11,12 +11,12 @@ const Content = styled.div`
   margin-top: 20px;
 `;
 
-const Page: React.FC = () => {
+const TopStores: React.FC = () => {
   const tabs = ["Top Products", "Top Posts", "Top Stores"];
 
   return (
     <>
-      <Tabs tabs={tabs} defaultTab={"Top Products"}>
+      <Tabs tabs={tabs} defaultTab={"Top Stores"}>
         {(activeTab) => (
           <Content>
             {activeTab === "Top Products" && (
@@ -59,4 +59,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default TopStores;
