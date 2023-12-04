@@ -9,7 +9,7 @@ export const Global = createGlobalStyle`
         font-size: 16px;
         
     }
-
+    
     @media only screen and (max-width: 920px) {
     font-size: 14px;
   }

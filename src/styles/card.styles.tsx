@@ -12,16 +12,27 @@ type ColumnProps = {
   marginLeft?: number;
 };
 
-export const HeadingContainer = styled.div`
+export const HeadingContainer = styled.div<{
+  screen?: boolean;
+}>`
   display: flex;
   padding: 0px, 32px, 0px, 32px;
   justify-content: space-between;
   border-bottom: 0.8px solid rgba(221, 221, 221, 1);
   padding: 30px;
+
+  @media (width < 576px) {
+    display: ${({ screen }) => (screen ? "none" : "flex")};
+  }
+
+  /* &.hide {
+    @media (width < 576px) {
+      display: none;
+    }
+  } */
 `;
 
 export const HeadingText = styled.h3`
-  /* font-family: Strawford; */
   font-size: 22px;
   font-weight: 500;
   line-height: 26px;

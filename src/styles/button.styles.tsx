@@ -42,7 +42,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
@@ -51,16 +51,21 @@ export const ButtonContainer = styled.div`
   flex-wrap: nowrap;
   overflow-x: auto;
   margin-bottom: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 10px; */
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: center; */
+  padding-bottom: 12px;
+  overflow-x: auto;
 
   &::-webkit-scrollbar {
-    height: 5px;
+    height: 0px;
     border-radius: 5px;
-    background-color: lightgray;
+    background-color: white;
   }
 
   @media (max-width: 992px) {
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
 
   @media (max-width: 768px) {
@@ -121,21 +126,28 @@ export const ButtonText = styled.text`
 export const RootWrapper = styled.div`
   margin: 50px;
   /* outline: solid 1px black; */
+ &.removeMargin{
+    @media (max-width: 576px) {
+    margin: auto;
+    /* border: 2px solid red; */
+  }
+ }
+ 
 `;
 
 export const TabWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow-x: scroll;
   margin-bottom: 15px;
+  padding: 0px 32px;
 
   &::-webkit-scrollbar {
-    height: 5px;
+    height: 0px;
     border-radius: 5px;
-    background-color: lightgray;
+    background-color: white;
   }
 
   @media (max-width: 992px) {

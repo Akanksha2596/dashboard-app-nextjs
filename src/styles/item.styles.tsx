@@ -9,11 +9,6 @@ import styled from "styled-components";
 export const SingleItem = styled.div`
   display: flex;
   justify-content: space-between;
-  /* flex-direction: row; */
-  /* height: 49.17px; */
-  /* height: 70px; */
-  /* padding: 10px 32px; */
-  /* padding: 10px 20px; */
   gap: 10px;
   border-bottom: 0.8px solid rgba(221, 221, 221, 1);
   &.topProducts {
@@ -59,12 +54,7 @@ export const ContentDiv = styled.div<{
 `;
 
 export const SubContentDiv = styled.div`
-  /* display: flex;
-  width: 217px;
-  height: 16.17px;
-  gap: 10px;
-  /* flex: 1 0 0;
-  align-self: center; */
+  align-self: center; 
   display: flex;
   justify-content: flex-start;
   gap: 10px;
@@ -90,13 +80,14 @@ export const Heading = styled.p`
     white-space: pre-wrap; /* let the text wrap preserving spaces */
   }
 
-  /* &.storespara{
-    display: flex;
-    flex: column;
-    align-items: center;
-    align-self: center;
-    text-align:center;
-  } */
+  &.postspara {
+    padding-top: 7px;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /* start showing ellipsis when 1st line is reached */
+    white-space: pre-wrap; /* let the text wrap preserving spaces */
+  }
 `;
 
 export const SubHeading = styled.span`
@@ -117,14 +108,32 @@ export const SubHeading = styled.span`
   }
 `;
 
-export const ItemWrapper = styled.div`
-  max-height: 349px;
+export const ItemWrapper = styled.div<{
+  maxHeight?: boolean;
+}>`
+  max-height: ${(props) => (props.maxHeight ? "60vh" : "48vh")};
+  /* max-height: 349px; */
+  /* height: 30%; */
   overflow-y: scroll;
   overflow-x: hidden;
 
   &::-webkit-scrollbar {
     width: 1px;
     background: #f1f1f1;
+  }
+ 
+  @media (max-width: 992px) {
+    /* max-height: 80vh; */
+    max-height: ${(props) => (props.maxHeight ? "80vh" : "48vh")};
+  }
+
+  @media (max-width: 768px) {
+    /* max-height: 80vh; */
+    max-height: ${(props) => (props.maxHeight ? "80vh" : "48vh")};
+  }
+
+  @media (max-width: 576px) {
+    /* max-height: 80vh; */
   }
 `;
 
