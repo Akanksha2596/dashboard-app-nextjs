@@ -1,78 +1,32 @@
 import { ReactElement } from "react";
 import { SlArrowLeft } from "react-icons/sl";
 import { IoMdClose } from "react-icons/io";
-import Link from "next/link";
 import { useRouter } from "next/router";
+import { NavDiv, ArrowIcon,Title, CrossIcon } from "@/styles/mobilenav.styles";
 
 const MobileHeader = ({ children }: { children: ReactElement }) => {
   const router = useRouter();
   console.log(router.route, "route");
+
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          alignSelf: "stretch",
-          padding: "20px 33px",
-        }}
-      >
-        <Link
-          href="/"
-          style={{ marginLeft: "20px", width: "16.596px", height: "16.596px" }}
-        >
+      <NavDiv>
+        <ArrowIcon href="/">
           <SlArrowLeft />
-        </Link>
+        </ArrowIcon>
         {router.route === "/topProducts" ? (
-          <h3
-            style={{
-              fontSize: "18.67px",
-              fontWeight: "bold",
-            }}
-          >
-            Top Products
-          </h3>
+          <Title>Top Products</Title>
         ) : router.route === "/topPosts" ? (
-          <h3
-            style={{
-              fontSize: "18.67px",
-              fontWeight: "bold",
-            }}
-          >
-            Top Posts
-          </h3>
+          <Title>Top Posts</Title>
         ) : router.route === "/topStores" ? (
-          <h3
-            style={{
-              fontSize: "18.67px",
-              fontWeight: "bold",
-            }}
-          >
-            Top Stores
-          </h3>
+          <Title>Top Stores</Title>
         ) : (
-          <h3
-            style={{
-              fontSize: "18.67px",
-              fontWeight: "bold",
-            }}
-          >
-            My Dashboard
-          </h3>
+          <Title>My Dashboard</Title>
         )}
-
-        <Link
-          style={{
-            marginRight: "20px",
-            width: "16.596px",
-            height: "16.596px",
-          }}
-          href="/"
-        >
+        <CrossIcon href="/">
           <IoMdClose />
-        </Link>
-      </div>
+        </CrossIcon>
+      </NavDiv>
       {children}
     </>
   );
