@@ -124,15 +124,16 @@ export const ButtonText = styled.text`
 `;
 
 export const RootWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: 50px;
   /* outline: solid 1px black; */
- &.removeMargin{
+  &.removeMargin {
     @media (max-width: 576px) {
-    margin: auto;
-    /* border: 2px solid red; */
+      margin: 20px;
+      /* border: 2px solid red; */
+    }
   }
- }
- 
 `;
 
 export const TabWrapper = styled.div`
